@@ -1,0 +1,66 @@
+{% extends "patp/base.html" %}
+{% block title %}Главная страница{% endblock %}
+{% csrf_token %}
+
+{% block content %}
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>ФИО</th>
+            <th>модель</th>
+            <th>Номер</th>
+            <th>VIN</th>
+            <th>Дата покупки</th>
+            <th>Мощность</th>
+            <th>Тех. Осмотр</th>
+            <th>Пробег</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for avto in Avto %}
+        <tr>
+            <td>{{Avto.user}}</td>
+            <td>{{Avto.model}}</td>
+            <td>{{Avto.avto_nomer}}</td>
+            <td>{{Avto.vin}}</td>
+            <td>{{Avto.date_purchase}}</td>
+            <td>{{Avto.engine_power}}</td>
+            <td>{{Avto.tech_inspection}}</td>
+            <td>{{Avto.mileage}}</td>
+
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+  <!-- <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Date</th>
+        <th>FIO</th>
+        <th>Transport</th>
+        <th>Ostatok</th>
+        <th>Di`dano</th>
+        <th>Rashod</th>
+        <th>Proideno</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for report in reports %}
+      <tr>
+        <td>{{report.pk}}</td>
+        <td>{{report.date}}</td>
+        <td>{{report.employee}}</td>
+        <td>{{report.transport}}</td>
+        <td>{{report.fuel_dispendsed}}</td>
+        <td>{{report.fuel_used}}</td>
+        <td>{{report.mileage}}</td>
+        <td>96 km.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table> -->
+{% endblock %}
