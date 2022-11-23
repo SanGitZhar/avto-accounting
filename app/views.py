@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from django.views.generic.list import ListView
 from .models import Avto
 
@@ -11,4 +11,10 @@ class AvtoView(ListView):
 
 
 def index(request):
-    return render(request, 'patp/index.html')
+
+    from django.core import serializers
+    data = serializers.serialize("python",Avto.objects.all())
+    context = {'data':data,}
+
+    return render(request, 'patp/index.html', context)
+    

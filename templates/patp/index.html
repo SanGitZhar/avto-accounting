@@ -4,35 +4,49 @@
 
 {% block content %}
 <div class="container">
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-            <th>ФИО</th>
-            <th>модель</th>
-            <th>Номер</th>
-            <th>VIN</th>
-            <th>Дата покупки</th>
-            <th>Мощность</th>
-            <th>Тех. Осмотр</th>
-            <th>Пробег</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for avto in Avto %}
-        <tr>
-            <td>{{Avto.user}}</td>
-            <td>{{Avto.model}}</td>
-            <td>{{Avto.avto_nomer}}</td>
-            <td>{{Avto.vin}}</td>
-            <td>{{Avto.date_purchase}}</td>
-            <td>{{Avto.engine_power}}</td>
-            <td>{{Avto.tech_inspection}}</td>
-            <td>{{Avto.mileage}}</td>
+  <div class="row">
+    <div class="col-10">
+      <table class="table table-bordered">
+          <thead>
+          <tr>
+              <th>id</th>
+              <th>ФИО</th>
+              <th>модель</th>
+              <th>Номер</th>
+              <th>VIN</th>
+              <th>Дата покупки</th>
+              <th>Мощность</th>
+              <th>Тех. Осмотр</th>
+              <th>Пробег</th>
+              <th>Тип</th>
+          </tr>
+          </thead>
+          <tbody>
+          {% for avto in data %}
+          <tr>
+              <td>id</td>
+              <td>{{avto.fields.user}}</td>
+              <td>{{avto.fields.model}}</td>
+              <td>{{avto.fields.avto_nomer}}</td>
+              <td>{{avto.fields.vin}}</td>
+              <td>{{avto.fields.date_purchase}}</td>
+              <td>{{avto.fields.engine_power}}</td>
+              <td>{{avto.fields.tech_inspection}}</td>
+              <td>{{avto.fields.mileage}}</td>
+              <td></td>
 
-        </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+          </tr>
+          {% endfor %}
+          </tbody>
+      </table>
+    </div>
+    <div class="col-2">
+      <div class="form mt-10">
+        <button class="nav-link btn btn-success text-light mx-3 mt-3">Сортировать</button>
+      </div>
+    </div>
+  
+  </div>
 </div>
 
   <!-- <table class="table table-bordered">

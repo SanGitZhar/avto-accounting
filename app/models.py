@@ -20,7 +20,6 @@ class Avto(models.Model):
     model = models.CharField(max_length=255, verbose_name="Модель")
     avto_nomer = models.CharField(max_length =255,verbose_name="Номер автомобиля")
     vin = models.CharField(max_length=255,verbose_name="VIN код автомобиля")
-    brand = models.CharField(max_length=255, verbose_name="Марка")
     manufacturer = models.CharField(max_length=255, verbose_name="Изготовитель")
     date_purchase = models.DateField(verbose_name="Дата покупки")
     year_manufacture = models.DateField(verbose_name="Год изготовления")
@@ -28,6 +27,15 @@ class Avto(models.Model):
     engine_power = models.PositiveIntegerField(verbose_name="Мощность двигателя")
     tech_inspection = models.DateField(verbose_name="Техосмотр")
     mileage = models.PositiveIntegerField(verbose_name="Пробег")
+
+    TYPE_CHOICES =(
+        ("FREIGHT","Грузовой"),
+        ("PASSENGER","Пассажирский"),
+    )
+    type = models.CharField(max_length=20,
+                  choices=TYPE_CHOICES,
+                  default="PASSENGER")
+    load = models.PositiveIntegerField(verbose_name="Макс. Загрузка пассажиров/груза")
 
     def __str__(self) -> str:
         return self.model + " " + self.avto_nomer
