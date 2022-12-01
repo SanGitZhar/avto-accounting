@@ -3,10 +3,12 @@
 {% csrf_token %}
 
 {% block content %}
+
+
 <div class="container">
   <div class="row">
-    <div class="col-10">
-      <table class="table table-bordered">
+    <div class="col-12">
+      <table class="table table-bordered sortable">
           <thead>
           <tr>
               <th>id</th>
@@ -24,29 +26,32 @@
           <tbody>
           {% for avto in data %}
           <tr>
-              <td>id</td>
-              <td>{{avto.fields.user}}</td>
-              <td>{{avto.fields.model}}</td>
-              <td>{{avto.fields.avto_nomer}}</td>
-              <td>{{avto.fields.vin}}</td>
-              <td>{{avto.fields.date_purchase}}</td>
-              <td>{{avto.fields.engine_power}}</td>
-              <td>{{avto.fields.tech_inspection}}</td>
-              <td>{{avto.fields.mileage}}</td>
-              <td></td>
+              <td>{{avto.id}}</td>
+              <td>{{avto.user}}</td>
+              <td>{{avto.model}}</td>
+              <td>{{avto.avto_nomer}}</td>
+              <td>{{avto.vin}}</td>
+              <td>{{avto.date_purchase}}</td>
+              <td>{{avto.engine_power}}</td>
+              <td>{{avto.tech_inspection}}</td>
+              <td>{{avto.mileage}}</td>
+              <td>{{avto.type}}</td>
 
           </tr>
           {% endfor %}
           </tbody>
       </table>
     </div>
-    <div class="col-2">
+    <!-- <div class="col-1">
       <div class="form mt-10">
         <button class="nav-link btn btn-success text-light mx-3 mt-3">Сортировать</button>
       </div>
-    </div>
+    </div> -->
   
   </div>
+
+
+  
 </div>
 
   <!-- <table class="table table-bordered">
