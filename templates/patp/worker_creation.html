@@ -1,0 +1,14 @@
+{% extends "patp/base.html" %}
+{% block title %}Добавить работника{% endblock %}
+{% csrf_token %}
+
+{% block content %}
+    <div class="">
+        <form method="post">
+            {{worker_form.as_p}}
+            {% csrf_token %}
+            <p><input type="submit" value="Сохранить"></p>
+        </form>
+
+    </div>
+{% endblock %}

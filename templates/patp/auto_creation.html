@@ -1,0 +1,14 @@
+{% extends "patp/base.html" %}
+{% block title %}Добавить автомобиль{% endblock %}
+
+
+{% block content %}
+    <div class="">
+        <form method="post">
+            {{auto_form.as_p}}
+            {% csrf_token %}
+            <p><input type="submit" value="Сохранить"></p>
+        </form>
+
+    </div>
+{% endblock %}

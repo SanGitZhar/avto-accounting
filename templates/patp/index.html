@@ -24,29 +24,24 @@
           </tr>
           </thead>
           <tbody>
-          {% for avto in data %}
+          {% for auto in transports %}
           <tr>
-              <td>{{avto.id}}</td>
-              <td>{{avto.user}}</td>
-              <td>{{avto.model}}</td>
-              <td>{{avto.avto_nomer}}</td>
-              <td>{{avto.vin}}</td>
-              <td>{{avto.date_purchase}}</td>
-              <td>{{avto.engine_power}}</td>
-              <td>{{avto.tech_inspection}}</td>
-              <td>{{avto.mileage}}</td>
-              <td>{{avto.type}}</td>
+              <td>{{auto.id}}</td>
+              <td>{{auto.user}}</td>
+              <td>{{auto.model}}</td>
+              <td>{{auto.avto_nomer}}</td>
+              <td>{{auto.vin}}</td>
+              <td>{{auto.engine_power}}</td>
+              <td>{{auto.tech_inspection}}</td>
+              <td>{{auto.mileage}}</td>
+              <td>{{auto.type}}</td>
 
           </tr>
           {% endfor %}
           </tbody>
       </table>
     </div>
-    <!-- <div class="col-1">
-      <div class="form mt-10">
-        <button class="nav-link btn btn-success text-light mx-3 mt-3">Сортировать</button>
-      </div>
-    </div> -->
+   
   
   </div>
 
@@ -54,32 +49,5 @@
   
 </div>
 
-  <!-- <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>id</th>
-        <th>Date</th>
-        <th>FIO</th>
-        <th>Transport</th>
-        <th>Ostatok</th>
-        <th>Di`dano</th>
-        <th>Rashod</th>
-        <th>Proideno</th>
-      </tr>
-    </thead>
-    <tbody>
-        {% for report in reports %}
-      <tr>
-        <td>{{report.pk}}</td>
-        <td>{{report.date}}</td>
-        <td>{{report.employee}}</td>
-        <td>{{report.transport}}</td>
-        <td>{{report.fuel_dispendsed}}</td>
-        <td>{{report.fuel_used}}</td>
-        <td>{{report.mileage}}</td>
-        <td>96 km.</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table> -->
+ 
 {% endblock %}
